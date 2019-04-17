@@ -16,7 +16,7 @@ A [Giter8](http://www.foundweekends.org/giter8/) template for kickstarting a new
 
 ## Roadmap
 
-Have a look at the [project board](https://github.com/ontherocks-io/igniter/projects/1).
+Have a look at the [project board](https://github.com/ontherocks-io/igniter/projects/2).
 
 ## Why is `.gitignore` empty?
 
