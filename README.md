@@ -2,21 +2,22 @@
 
 A [Giter8](http://www.foundweekends.org/giter8/) template for kickstarting a new opinionated Scala project with the following features:
 
-* a tidy `build.sbt` heavily inspired by the awesome [sbt-fresh](https://github.com/sbt/sbt-fresh)
+* a tidy `build.sbt` heavily inspired by the awesome [sbt-fresh](https://github.com/sbt/sbt-fresh/)
 * slim base: almost all (upcoming) features are optional
-* formatting with scalafmt
-* clear and colorful logging on the console when running in dev mode (upcoming)
+* formatting with [scalafmt](https://scalameta.org/scalafmt/)
+* clear and colorful logging on the console when running in dev mode
 * circleci build script (optional)
 * an empty `.gitignore` (read more [here](#why-is-gitignore-empty))
 
 ## Configuration Options
 
-| Property          | Required | Default             | Description                               | Example         |
-| ----------------- | -------- | ------------------- | ----------------------------------------- | --------------- |
-| project_name      | true     | -                   | The project name                          | awesome-project |
-| organization      | false    | ig.ni.ter           | Organization domain (usually in reverse)  | io.awesome      |
-| organization_name | false    | Igniter             | Organization name                         | Awesome Org     |
-| package           | false    | $organization$      | The base package name (used for code gen) | io.awesome      |
+| Property          | Default             | Description                                                | Example         |
+| ----------------- | ------------------- | ---------------------------------------------------------- | --------------- |
+| project_name      | awesome-project     | The project name used in build.sbt                         | awesome-project |
+| organization      | ig.ni.ter           | Organization domain (usually in reverse)                   | io.awesome      |
+| organization_name | Igniter             | Organization name                                          | Awesome Org     |
+| package           | $organization$      | The base package name (used for code gen)                  | io.awesome      |
+| circleci          | true                | whether a build definition for circleci should be included | false           |
 
 ## Roadmap
 
