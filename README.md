@@ -6,6 +6,7 @@ A [Giter8](http://www.foundweekends.org/giter8/) template for kickstarting a new
 * slim base: almost all (upcoming) features are optional
 * formatting with [scalafmt](https://scalameta.org/scalafmt/)
 * clear and colorful logging on the console when running in dev mode
+* `BaseSpec` trait for tests
 * circleci build script (optional)
 * an empty `.gitignore` (read more [here](#why-is-gitignore-empty))
 
