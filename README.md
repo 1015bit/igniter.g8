@@ -1,11 +1,11 @@
 # Igniter
 
-A [Giter8](http://www.foundweekends.org/giter8/) template for kickstarting a new opinionated Scala project with the following features:
+A [Giter8](http://www.foundweekends.org/giter8/) template for kickstarting a new opinionated Scala [playground](#what-is-a-playground-project) project with the following features:
 
 * a tidy `build.sbt` heavily inspired by the awesome [sbt-fresh](https://github.com/sbt/sbt-fresh/)
 * slim base: almost all (upcoming) features are optional
 * formatting with [scalafmt](https://scalameta.org/scalafmt/)
-* clear and colorful logging on the console when running in dev mode
+* clear and colorful logging on the console
 * `BaseSpec` trait for tests
 * circleci build script (optional)
 * an empty `.gitignore` (read more [here](#why-is-gitignore-empty))
@@ -23,6 +23,14 @@ A [Giter8](http://www.foundweekends.org/giter8/) template for kickstarting a new
 ## Roadmap
 
 Have a look at the [project board](https://github.com/ontherocks-io/igniter/projects/2).
+
+## What is a playground project?
+
+It's what I call a project whose main purpose is to try out or learn something new. As such, it doesn't provide features like
+
+* support for automatic releases
+* license management/automatic creation of file headers
+* logging config suitable for production
 
 ## Why is `.gitignore` empty?
 
