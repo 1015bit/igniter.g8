@@ -77,9 +77,4 @@ lazy val commonSettings =
     Test / unmanagedSourceDirectories := Seq((Test / scalaSource).value),
 )
 
-lazy val scalafmtSettings =
-  Seq(
-    scalafmtOnCompile := true,
-  )
-
 addCommandAlias("validate", ";clean;scalafmtCheck;test:scalafmtCheck;test")
