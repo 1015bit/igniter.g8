@@ -39,9 +39,7 @@ lazy val library =
 // Settings
 // *****************************************************************************
 
-lazy val settings =
-  commonSettings ++
-  scalafmtSettings
+lazy val settings = commonSettings
 
 lazy val commonSettings =
   Seq(
@@ -76,10 +74,5 @@ lazy val commonSettings =
     Compile / unmanagedSourceDirectories := Seq((Compile / scalaSource).value),
     Test / unmanagedSourceDirectories := Seq((Test / scalaSource).value),
 )
-
-lazy val scalafmtSettings =
-  Seq(
-    scalafmtOnCompile := true,
-  )
 
 addCommandAlias("validate", ";clean;scalafmtCheck;test:scalafmtCheck;test")

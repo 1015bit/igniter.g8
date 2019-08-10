@@ -5,6 +5,7 @@ A [Giter8](http://www.foundweekends.org/giter8/) template for kickstarting a new
 * a tidy `build.sbt` heavily inspired by the awesome [sbt-fresh](https://github.com/sbt/sbt-fresh/)
 * slim base: almost all (upcoming) features are optional
 * formatting with [scalafmt](https://scalameta.org/scalafmt/)
+* formatting rules based on Typelevel [Cats](https://github.com/typelevel/cats) with some small adaptions
 * clear and colorful logging on the console
 * `BaseSpec` trait for tests
 * circleci build script (optional)
