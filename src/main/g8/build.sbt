@@ -39,9 +39,7 @@ lazy val library =
 // Settings
 // *****************************************************************************
 
-lazy val settings =
-  commonSettings ++
-  scalafmtSettings
+lazy val settings = commonSettings
 
 lazy val commonSettings =
   Seq(
