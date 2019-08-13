@@ -7,7 +7,7 @@ A [Giter8](http://www.foundweekends.org/giter8/) template for kickstarting a new
 * formatting with [scalafmt](https://scalameta.org/scalafmt/)
 * formatting rules based on Typelevel [Cats](https://github.com/typelevel/cats) with some small adaptions
 * clear and colorful logging on the console
-* `BaseSpec` trait for tests
+* minitest
 * circleci build script (optional)
 * an empty `.gitignore` (read more [here](#why-is-gitignore-empty))
 
