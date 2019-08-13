@@ -8,8 +8,7 @@ lazy val `$project_name$` =
     .settings(settings)
     .settings(
       libraryDependencies ++= Seq(
-        library.scalaCheck % Test,
-        library.scalaTest  % Test
+        library.minitest % Test
       ) ++ library.log4j
     )
 
@@ -22,15 +21,13 @@ lazy val library =
     object Version {
       val log4j      = "2.11.2"
       val log4jScala = "11.0"
-      val scalaCheck = "1.14.0"
-      val scalaTest  = "3.0.8"
+      val minitest   = "2.5.0"
     }
     val log4jApi       = "org.apache.logging.log4j"  % "log4j-api"            % Version.log4j
     val log4jCore      = "org.apache.logging.log4j"  % "log4j-core"           % Version.log4j
     val log4jScala     = "org.apache.logging.log4j" %% "log4j-api-scala"      % Version.log4jScala
     val log4jslf4j     = "org.apache.logging.log4j"  % "log4j-slf4j-impl"     % Version.log4j
-    val scalaCheck     = "org.scalacheck"           %% "scalacheck"           % Version.scalaCheck
-    val scalaTest      = "org.scalatest"            %% "scalatest"            % Version.scalaTest
+    val minitest       = "io.monix"                 %% "minitest"             % Version.minitest
 
     val log4j = Seq(log4jApi, log4jCore, log4jScala, log4jslf4j)
   }
@@ -73,6 +70,7 @@ lazy val commonSettings =
     ),
     Compile / unmanagedSourceDirectories := Seq((Compile / scalaSource).value),
     Test / unmanagedSourceDirectories := Seq((Test / scalaSource).value),
+    testFrameworks += new TestFramework("minitest.runner.Framework")
 )
 
 addCommandAlias("validate", ";clean;scalafmtCheck;test:scalafmtCheck;test")
