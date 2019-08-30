@@ -8,6 +8,7 @@ lazy val `$project_name$` =
     .settings(settings)
     .settings(
       libraryDependencies ++= Seq(
+        $if(cats.truthy)$library.catsCore,$endif$
         library.minitest % Test
       ) ++ library.log4j
     )
@@ -19,10 +20,12 @@ lazy val `$project_name$` =
 lazy val library =
   new {
     object Version {
+      $if(cats.truthy)$val cats       = "2.0.0-RC1"$endif$
       val log4j      = "2.11.2"
       val log4jScala = "11.0"
       val minitest   = "2.5.0"
     }
+    $if(cats.truthy)$val catsCore       = "org.typelevel"            %% "cats-core"            % Version.cats$endif$
     val log4jApi       = "org.apache.logging.log4j"  % "log4j-api"            % Version.log4j
     val log4jCore      = "org.apache.logging.log4j"  % "log4j-core"           % Version.log4j
     val log4jScala     = "org.apache.logging.log4j" %% "log4j-api-scala"      % Version.log4jScala

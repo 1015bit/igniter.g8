@@ -9,6 +9,7 @@ A [Giter8](http://www.foundweekends.org/giter8/) template for kickstarting a new
 * clear and colorful logging on the console
 * minitest
 * circleci build script (optional)
+* cats-core dependency (optional)
 * an empty `.gitignore` (read more [here](#why-is-gitignore-empty))
 
 ## Configuration Options
@@ -19,7 +20,8 @@ A [Giter8](http://www.foundweekends.org/giter8/) template for kickstarting a new
 | organization      | ig.ni.ter           | Organization domain (usually in reverse)                   | io.awesome      |
 | organization_name | Igniter             | Organization name                                          | Awesome Org     |
 | package           | $organization$      | The base package name (used for code gen)                  | io.awesome      |
-| circleci          | true                | whether a build definition for circleci should be included | false           |
+| circleci          | true                | Whether a build definition for circleci should be included | false           |
+| cats              | true                | Adds a dependency on cats-core                             | true            |
 
 ## Roadmap
 
