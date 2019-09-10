@@ -20,10 +20,10 @@ lazy val `$project_name$` =
 lazy val library =
   new {
     object Version {
-      $if(cats.truthy)$val cats       = "2.0.0-RC1"$endif$
-      val log4j      = "2.11.2"
+      $if(cats.truthy)$val cats       = "2.0.0"$endif$
+      val log4j      = "2.12.1"
       val log4jScala = "11.0"
-      val minitest   = "2.5.0"
+      val minitest   = "2.7.0"
     }
     $if(cats.truthy)$val catsCore       = "org.typelevel"            %% "cats-core"            % Version.cats$endif$
     val log4jApi       = "org.apache.logging.log4j"  % "log4j-api"            % Version.log4j
@@ -43,7 +43,7 @@ lazy val settings = commonSettings
 
 lazy val commonSettings =
   Seq(
-    scalaVersion := "2.12.8",
+    scalaVersion := "2.12.9",
     organization := "$organization$",
     organizationName := "$organization_name$",
     startYear := Some(2019),
