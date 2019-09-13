@@ -1,8 +1,8 @@
 package $package$
 
-import org.apache.logging.log4j.scala.Logging
+import com.typesafe.scalalogging.StrictLogging
 
-object Main extends Logging {
+object Main extends StrictLogging {
 
   def main(args: Array[String]): Unit = {
     logger.debug("be")
