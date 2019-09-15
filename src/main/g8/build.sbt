@@ -70,7 +70,7 @@ lazy val scalacOptionsWarning = Seq(
   "-Wvalue-discard",
   "-Wunused:imports",
   "-Wunused:patvars",
-  // "-Wunused:privates", // potential bug: enabling unused:privates also warns about unsused local definitions
+  // "-Wunused:privates", // potential bug: enabling unused:privates also warns about unused local definitions
   // "-Wunused:locals",
   "-Wunused:explicits"
 )
