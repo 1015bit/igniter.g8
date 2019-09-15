@@ -46,25 +46,50 @@ lazy val commonSettings =
     organizationName := "$organization_name$",
     startYear := Some(2019),
     licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0")),
-    scalacOptions ++= Seq(
-      "-unchecked",
-      "-deprecation",
-      "-feature",
-      "-language:_",
-      "-target:jvm-1.8",
-      "-encoding", "UTF-8",
-      "-Wdead-code",
-      "-Wextra-implicit",
-      "-Wnumeric-widen",
-      "-Woctal-literal",
-      "-Wself-implicit",
-      "-Wunused",
-      "-Wvalue-discard",
-      "-Xlint:_"
-    ),
+    scalacOptions ++= scalacOptionsAll,
     Compile / unmanagedSourceDirectories := Seq((Compile / scalaSource).value),
     Test / unmanagedSourceDirectories := Seq((Test / scalaSource).value),
     testFrameworks += new TestFramework("minitest.runner.Framework")
+)
+
+lazy val scalacOptionsAll = Seq(
+  "-unchecked",
+  "-deprecation",
+  "-feature",
+  "-language:_",
+  "-target:jvm-1.8",
+  "-encoding", "UTF-8"
+) ++ scalacOptionsWarning ++ scalacOptionsLinter
+
+lazy val scalacOptionsWarning = Seq(
+  "-Wdead-code",
+  "-Wextra-implicit",
+  "-Wnumeric-widen",
+  "-Woctal-literal",
+  "-Wself-implicit",
+  "-Wvalue-discard",
+  "-Wunused:imports",
+  "-Wunused:patvars",
+  // "-Wunused:privates", // potential bug: enabling unused:privates also warns about unsused local definitions
+  // "-Wunused:locals",
+  "-Wunused:explicits"
+)
+
+// copied from monix/minitest :)
+lazy val scalacOptionsLinter = Seq(
+  "-Xlint:adapted-args", // warn if an argument list is modified to match the receiver
+  "-Xlint:nullary-unit", // warn when nullary methods return Unit
+  "-Xlint:inaccessible", // warn about inaccessible types in method signatures
+  "-Xlint:nullary-override", // warn when non-nullary `def f()' overrides nullary `def f'
+  "-Xlint:infer-any", // warn when a type argument is inferred to be `Any`
+  "-Xlint:missing-interpolator", // a string literal appears to be missing an interpolator id
+  "-Xlint:doc-detached", // a ScalaDoc comment appears to be detached from its element
+  "-Xlint:private-shadow", // a private field (or class parameter) shadows a superclass field
+  "-Xlint:type-parameter-shadow", // a local type parameter shadows a type already in scope
+  "-Xlint:poly-implicit-overload", // parameterized overloaded implicit methods are not visible as view bounds
+  "-Xlint:option-implicit", // Option.apply used implicit view
+  "-Xlint:delayedinit-select", // Selecting member of DelayedInit
+  "-Xlint:package-object-classes", // Class or object defined in package object
 )
 
 addCommandAlias("prepare", ";clean;scalafmt;test:scalafmt")
