@@ -1,5 +1,7 @@
 # Igniter
 
+[![CircleCI](https://circleci.com/gh/pbvie/igniter.g8.svg?style=svg)](https://circleci.com/gh/pbvie/igniter.g8)
+
 A [Giter8](http://www.foundweekends.org/giter8/) template for kickstarting a new opinionated Scala [playground](#what-is-a-playground-project) project with the following features:
 
 * a tidy `build.sbt` heavily inspired by the awesome [sbt-fresh](https://github.com/sbt/sbt-fresh/)
@@ -12,6 +14,12 @@ A [Giter8](http://www.foundweekends.org/giter8/) template for kickstarting a new
 * circleci build script (optional)
 * cats-core dependency (optional)
 * an empty `.gitignore` (read more [here](#why-is-gitignore-empty))
+
+## Usage
+
+```
+sbt new pbvie/igniter.g8
+```
 
 ## Configuration Options
 
