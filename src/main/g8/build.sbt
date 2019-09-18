@@ -41,7 +41,7 @@ lazy val settings = commonSettings
 
 lazy val commonSettings =
   Seq(
-    scalaVersion := "2.13.0",
+    scalaVersion := "2.13.1",
     organization := "$organization$",
     organizationName := "$organization_name$",
     startYear := Some(2019),
