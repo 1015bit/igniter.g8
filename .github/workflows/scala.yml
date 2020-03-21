@@ -10,6 +10,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    # needed when locally with `act`
+    env:
+      RUNNER_OS: linux
+
     steps:
       - uses: actions/checkout@v2
       - uses: olafurpg/setup-scala@v5 # uses Java version adopt@1.8 by default
