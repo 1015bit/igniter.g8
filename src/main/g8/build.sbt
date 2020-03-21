@@ -23,7 +23,7 @@ lazy val library =
   new {
     object Version {
       $if(cats.truthy)$val cats         = "2.0.0"$endif$
-      val log4j        = "2.12.1"
+      val log4j        = "2.13.1"
       val minitest     = "2.7.0"
       val scalaLogging = "3.9.2"
     }
