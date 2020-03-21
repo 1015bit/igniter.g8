@@ -4,13 +4,14 @@
 
 A [Giter8](http://www.foundweekends.org/giter8/) template for kickstarting a new opinionated Scala [playground](#what-is-a-playground-project) project with the following features:
 
-* a tidy `build.sbt` heavily inspired by the awesome [sbt-fresh](https://github.com/sbt/sbt-fresh/)
+* a tidy `build.sbt` heavily inspired by [sbt-fresh](https://github.com/sbt/sbt-fresh/)
 * sensible compiler options
 * slim base: almost all (upcoming) features are optional
 * formatting with [scalafmt](https://scalameta.org/scalafmt/)
 * formatting rules based on Typelevel [Cats](https://github.com/typelevel/cats) with some small adaptions
 * clear and colorful logging on the console
 * minitest
+* build using GitHub actions (optional)
 * circleci build script (optional)
 * cats-core dependency (optional)
 * an empty `.gitignore` (read more [here](#why-is-gitignore-empty))
@@ -23,18 +24,19 @@ sbt new pbvie/igniter.g8
 
 ## Configuration Options
 
-| Property          | Default             | Description                                                | Example         |
-| ----------------- | ------------------- | ---------------------------------------------------------- | --------------- |
-| project_name      | awesome-project     | The project name used in build.sbt                         | awesome-project |
-| organization      | ig.ni.ter           | Organization domain (usually in reverse)                   | io.awesome      |
-| organization_name | Igniter             | Organization name                                          | Awesome Org     |
-| package           | $organization$      | The base package name (used for code gen)                  | io.awesome      |
-| circleci          | true                | Whether a build definition for circleci should be included | false           |
-| cats              | true                | Adds a dependency on cats-core                             | true            |
+| Property          | Default         | Description                                                      | Example         |
+| ----------------- | --------------- | ---------------------------------------------------------------- | --------------- |
+| project_name      | awesome-project | The project name used in build.sbt                               | awesome-project |
+| organization      | ig.ni.ter       | Organization domain (usually in reverse)                         | io.awesome      |
+| organization_name | Igniter         | Organization name                                                | Awesome Org     |
+| package           | $organization$  | The base package name (used for code gen)                        | io.awesome      |
+| circleci          | true            | Whether a build definition for circleci should be included       | false           |
+| gh_actions        | true            | Whether a build definition for GitHub Actions should be included | false           |
+| cats              | false           | Adds a dependency on cats-core                                   | true            |
 
 ## Roadmap
 
-Have a look at the [project board](https://github.com/ontherocks-io/igniter/projects/2).
+Have a look at the [project board](https://github.com/pbvie/igniter.g8/projects/2).
 
 ## What is a playground project?
 
