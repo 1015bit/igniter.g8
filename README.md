@@ -1,6 +1,6 @@
 # Igniter
 
-![Scala CI](https://github.com/pbvie/igniter.g8/workflows/Scala%20CI/badge.svg?branch=master)[![CircleCI](https://circleci.com/gh/pbvie/igniter.g8.svg?style=svg)](https://circleci.com/gh/pbvie/igniter.g8)
+![Scala CI](https://github.com/pbvie/igniter.g8/workflows/Scala%20CI/badge.svg?branch=master) [![CircleCI](https://circleci.com/gh/pbvie/igniter.g8.svg?style=svg)](https://circleci.com/gh/pbvie/igniter.g8)
 
 A [Giter8](http://www.foundweekends.org/giter8/) template for kickstarting a new opinionated Scala [playground](#what-is-a-playground-project) project with the following features:
 
@@ -37,6 +37,10 @@ sbt new pbvie/igniter.g8
 ## Roadmap
 
 Have a look at the [project board](https://github.com/pbvie/igniter.g8/projects/2).
+
+## Tip: Run your GitHub Actions locally
+
+You can run your GitHub Actions locally with [act]("https://github.com/nektos/act").
 
 ## What is a playground project?
 

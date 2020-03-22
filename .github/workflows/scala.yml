@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    # needed when locally with `act`
+    # required when running locally with `act`
     env:
       RUNNER_OS: linux
 
