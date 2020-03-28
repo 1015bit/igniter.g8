@@ -10,14 +10,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    # required when running locally with `act`
-    env:
-      RUNNER_OS: linux
-
     steps:
       - uses: actions/checkout@v2
-      - uses: olafurpg/setup-scala@v5 # uses Java version adopt@1.8 by default
-        # with:
-        # java-version: adopt@1.11
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
       - name: Run tests
         run: sbt g8Test
