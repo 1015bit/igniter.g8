@@ -1,10 +1,8 @@
 package $package$
 
-import minitest.SimpleTestSuite
+class SimpleSuite extends munit.FunSuite {
 
-object SimpleSuite extends SimpleTestSuite {
-
-  test("writing tests with minitest") {
+  test("writing tests with munit") {
     assertEquals(2, 1 + 1)
   }
 
