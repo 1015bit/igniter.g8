@@ -23,8 +23,8 @@ lazy val library =
   new {
     object Version {
       $if(cats.truthy)$val cats         = "2.1.1"$endif$
-      val log4j        = "2.13.1"
-      val munit        = "0.7.3"
+      val log4j        = "2.13.3"
+      val munit        = "0.7.9"
       val scalaLogging = "3.9.2"
     }
     $if(cats.truthy)$val catsCore       = "org.typelevel"              %% "cats-core"            % Version.cats$endif$
@@ -41,7 +41,7 @@ lazy val settings = commonSettings
 
 lazy val commonSettings =
   Seq(
-    scalaVersion := "2.13.2",
+    scalaVersion := "2.13.3",
     organization := "$organization$",
     organizationName := "$organization_name$",
     startYear := Some(2020),
