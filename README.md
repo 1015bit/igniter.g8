@@ -10,7 +10,7 @@ A [Giter8](http://www.foundweekends.org/giter8/) template for kickstarting a new
 * formatting with [scalafmt](https://scalameta.org/scalafmt/)
 * formatting rules based on Typelevel [Cats](https://github.com/typelevel/cats) with some small adaptions
 * clear and colorful logging on the console
-* MUnit
+* MUnit as test framework
 * build using GitHub actions (optional)
 * circleci build script (optional)
 * cats-core dependency (optional)
