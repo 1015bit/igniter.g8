@@ -2,6 +2,8 @@
 // Projects
 // *****************************************************************************
 
+ThisBuild / scalafixDependencies += "com.github.liancheng" %% "organize-imports" % "0.4.3"
+
 lazy val `$project_name$` =
   project
     .in(file("."))
@@ -22,9 +24,9 @@ lazy val `$project_name$` =
 lazy val library =
   new {
     object Version {
-      $if(cats.truthy)$val cats         = "2.1.1"$endif$
+      $if(cats.truthy)$val cats         = "2.2.0"$endif$
       val log4j        = "2.13.3"
-      val munit        = "0.7.9"
+      val munit        = "0.7.14"
       val scalaLogging = "3.9.2"
     }
     $if(cats.truthy)$val catsCore       = "org.typelevel"              %% "cats-core"            % Version.cats$endif$
@@ -41,7 +43,7 @@ lazy val settings = commonSettings
 
 lazy val commonSettings =
   Seq(
-    scalaVersion := "2.13.3",
+    scalaVersion := "2.13.4",
     organization := "$organization$",
     organizationName := "$organization_name$",
     startYear := Some(2020),
