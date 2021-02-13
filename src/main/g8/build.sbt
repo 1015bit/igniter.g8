@@ -24,9 +24,9 @@ lazy val `$project_name$` =
 lazy val library =
   new {
     object Version {
-      $if(cats.truthy)$val cats         = "2.2.0"$endif$
+      $if(cats.truthy)$val cats         = "2.4.1"$endif$
       val log4j        = "2.13.3"
-      val munit        = "0.7.14"
+      val munit        = "0.7.21"
       val scalaLogging = "3.9.2"
     }
     $if(cats.truthy)$val catsCore       = "org.typelevel"              %% "cats-core"            % Version.cats$endif$
