@@ -1,6 +1,6 @@
 # Igniter
 
-![Scala CI](https://github.com/pbvie/igniter.g8/workflows/Scala%20CI/badge.svg?branch=master) [![CircleCI](https://circleci.com/gh/pbvie/igniter.g8.svg?style=svg)](https://circleci.com/gh/pbvie/igniter.g8)
+![Scala CI](https://github.com/pbvie/igniter.g8/workflows/Scala%20CI/badge.svg?branch=master)
 
 A [Giter8](http://www.foundweekends.org/giter8/) template for kickstarting a new opinionated Scala [playground](#what-is-a-playground-project) project with the following features:
 
