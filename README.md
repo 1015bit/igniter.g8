@@ -12,7 +12,6 @@ A [Giter8](http://www.foundweekends.org/giter8/) template for kickstarting a new
 * clear and colorful logging on the console
 * MUnit as test framework
 * build using GitHub actions (optional)
-* circleci build script (optional)
 * cats-core dependency (optional)
 * an empty `.gitignore` (read more [here](#why-is-gitignore-empty))
 
@@ -30,7 +29,6 @@ sbt new pbvie/igniter.g8
 | organization      | ig.ni.ter       | Organization domain (usually in reverse)                         | io.awesome      |
 | organization_name | Igniter         | Organization name                                                | Awesome Org     |
 | package           | $organization$  | The base package name (used for code gen)                        | io.awesome      |
-| circleci          | true            | Whether a build definition for circleci should be included       | false           |
 | gh_actions        | true            | Whether a build definition for GitHub Actions should be included | false           |
 | cats              | false           | Adds a dependency on cats-core                                   | true            |
 
