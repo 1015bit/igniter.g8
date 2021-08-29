@@ -1,4 +1,15 @@
 // *****************************************************************************
+// Global settings
+// *****************************************************************************
+
+ThisBuild / scalaVersion := "3.0.1"
+ThisBuild / organization := "ontherocks.io"
+ThisBuild / startYear    := Some(2021)
+ThisBuild / licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
+
+ThisBuild / scalafixDependencies += lib.organizeImports
+
+// *****************************************************************************
 // Projects
 // *****************************************************************************
 
@@ -10,10 +21,10 @@ lazy val `$project_name$` =
     .settings(settings)
     .settings(
       libraryDependencies ++= Seq(
-        $if(cats.truthy)$library.catsCore,$endif$
-        library.log4jSlf4j,
-        library.scalaLogging,
-        library.munit % Test
+        $if(cats.truthy)$lib.catsCore,$endif$
+        lib.log4jSlf4j,
+        lib.scalaLogging,
+        lib.munit % Test
       )
     )
 
@@ -21,19 +32,23 @@ lazy val `$project_name$` =
 // Library dependencies
 // *****************************************************************************
 
-lazy val library =
+lazy val lib =
   new {
-    object Version {
-      $if(cats.truthy)$val cats         = "2.4.1"$endif$
-      val log4j        = "2.13.3"
-      val munit        = "0.7.21"
-      val scalaLogging = "3.9.2"
+    object V {
+      $if(cats.truthy)$val cats         = "2.6.1"$endif$
+      val log4j           = "2.14.1"
+      val munit           = "0.7.27"
+      val scalaLogging    = "3.9.4"
+
+      val organizeImports = "0.5.0"
     }
-    $if(cats.truthy)$val catsCore       = "org.typelevel"              %% "cats-core"            % Version.cats$endif$
-    val log4jSlf4j     = "org.apache.logging.log4j"    % "log4j-slf4j-impl"     % Version.log4j
-    val munit          = "org.scalameta"              %% "munit"                % Version.munit
-    val scalaLogging   = "com.typesafe.scala-logging" %% "scala-logging"        % Version.scalaLogging
+    $if(cats.truthy)$val catsCore       = "org.typelevel"              %% "cats-core"            % V.cats$endif$
+    val log4jSlf4j      = "org.apache.logging.log4j"    % "log4j-slf4j-impl"     % V.log4j
+    val munit           = "org.scalameta"              %% "munit"                % V.munit
+    val scalaLogging    = "com.typesafe.scala-logging" %% "scala-logging"        % V.scalaLogging
+    val organizeImports = "com.github.liancheng"    %% "organize-imports" % V.organizeImports
   }
+
 
 // *****************************************************************************
 // Settings
@@ -43,25 +58,33 @@ lazy val settings = commonSettings
 
 lazy val commonSettings =
   Seq(
-    scalaVersion := "2.13.4",
-    organization := "$organization$",
-    organizationName := "$organization_name$",
-    startYear := Some(2020),
-    licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0")),
-    scalacOptions ++= customScalacOptions,
+    scalacOptions ++= commonScalacOptions,
     Compile / unmanagedSourceDirectories := Seq((Compile / scalaSource).value),
-    Test / unmanagedSourceDirectories := Seq((Test / scalaSource).value),
+    Test / unmanagedSourceDirectories    := Seq((Test / scalaSource).value),
     testFrameworks += new TestFramework("munit.Framework")
+  )
+
+lazy val commonScalacOptions = Seq(
+  "-deprecation",
+  "-encoding",
+  "UTF-8",
+  "-explain",
+  "-explain-types",
+  "-feature", // warn about usage of features that need to be enabled explicitly
+  "-indent",
+  "-language:_",
+  "-new-syntax", // `then` and `do`
+  "-print-lines",
+  "-unchecked",
+  "-Ykind-projector:underscores", // use new type lambda syntax
+  //"-Xfatal-warnings",
+  "-Xmigration"
+  //"-Xsemanticdb"
 )
 
-lazy val customScalacOptions = Seq(
-  "-unchecked",
-  "-deprecation",
-  "-feature",
-  "-language:_",
-  "-target:jvm-1.8",
-  "-encoding", "UTF-8"
-)
+// *****************************************************************************
+// Aliases
+// *****************************************************************************
 
 addCommandAlias("prepare", ";clean;scalafmt;test:scalafmt")
 addCommandAlias("validate", ";clean;scalafmtCheck;test:scalafmtCheck;test")

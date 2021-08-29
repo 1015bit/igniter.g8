@@ -2,18 +2,24 @@
 
 ![Scala CI](https://github.com/pbvie/igniter.g8/workflows/Scala%20CI/badge.svg?branch=master)
 
-A [Giter8](http://www.foundweekends.org/giter8/) template for kickstarting a new opinionated Scala [playground](#what-is-a-playground-project) project with the following features:
+A [Giter8](http://www.foundweekends.org/giter8/) template for kickstarting a new opinionated Scala project with the following features:
 
 * a tidy `build.sbt` inspired by [sbt-fresh](https://github.com/sbt/sbt-fresh/)
 * sensible compiler options
 * slim base: almost all (upcoming) features are optional
 * formatting with [scalafmt](https://scalameta.org/scalafmt/)
-* formatting rules based on Typelevel [Cats](https://github.com/typelevel/cats) with some small adaptions
+* formatting rules loosely based on Typelevel [Cats](https://github.com/typelevel/cats)
 * clear and colorful logging on the console
-* MUnit as test framework
-* build using GitHub actions (optional)
+* [MUnit](https://scalameta.org/munit/) as test framework
+* CI using GitHub actions (optional)
 * cats-core dependency (optional)
 * an empty `.gitignore` (read more [here](#why-is-gitignore-empty))
+
+Its main use case are personal projects, so it currently doesn't support production-related functionality like
+
+* release management
+* logging/metrics suitable for production
+* more sophisticated header/license management
 
 ## Usage
 
@@ -39,14 +45,6 @@ Have a look at the [project board](https://github.com/pbvie/igniter.g8/projects/
 ## Tip: Run your GitHub Actions locally
 
 You can run your GitHub Actions locally with [act]("https://github.com/nektos/act").
-
-## What is a playground project?
-
-It's what I call a project whose main purpose is to try out or learn something new. As such, it doesn't provide features like
-
-* support for automatic releases
-* license management/automatic creation of file headers
-* logging config suitable for production
 
 ## Why is `.gitignore` empty?
 
