@@ -1,0 +1,4 @@
+# Project-specific .gitignore
+#
+# Everything specific to a person's individual setup (OS, IDE, etc..) should 
+# go into their global .gitignore (usually found at $HOME/.gitignore)
