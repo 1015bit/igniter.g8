@@ -37,7 +37,7 @@ lazy val lib =
     object V {
       $if(cats.truthy)$val cats         = "2.6.1"$endif$
       val log4j           = "2.14.1"
-      val munit           = "0.7.27"
+      val munit           = "0.7.29"
       val scalaLogging    = "3.9.4"
 
       val organizeImports = "0.5.0"
