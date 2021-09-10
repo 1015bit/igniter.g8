@@ -2,7 +2,7 @@
 // Global settings
 // *****************************************************************************
 
-ThisBuild / scalaVersion := "3.0.1"
+ThisBuild / scalaVersion := "3.0.2"
 ThisBuild / organization := "ontherocks.io"
 ThisBuild / startYear    := Some(2021)
 ThisBuild / licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
