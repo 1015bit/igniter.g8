@@ -24,7 +24,7 @@ Its main use case are personal projects, so it currently doesn't support product
 ## Usage
 
 ```
-sbt new pbvie/igniter.g8
+sbt new 1015bit/igniter.g8
 ```
 
 ## Configuration Options
