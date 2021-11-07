@@ -2,8 +2,8 @@
 // Global settings
 // *****************************************************************************
 
-ThisBuild / scalaVersion := "3.0.2"
-ThisBuild / organization := "ontherocks.io"
+ThisBuild / scalaVersion := "3.1.0"
+ThisBuild / organization := "$organization$"
 ThisBuild / startYear    := Some(2021)
 ThisBuild / licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
 
@@ -12,8 +12,6 @@ ThisBuild / scalafixDependencies += lib.organizeImports
 // *****************************************************************************
 // Projects
 // *****************************************************************************
-
-ThisBuild / scalafixDependencies += "com.github.liancheng" %% "organize-imports" % "0.4.3"
 
 lazy val `$project_name$` =
   project
@@ -39,14 +37,13 @@ lazy val lib =
       val log4j           = "2.14.1"
       val munit           = "0.7.29"
       val scalaLogging    = "3.9.4"
-
-      val organizeImports = "0.5.0"
+      val organizeImports = "0.6.0"
     }
     $if(cats.truthy)$val catsCore       = "org.typelevel"              %% "cats-core"            % V.cats$endif$
     val log4jSlf4j      = "org.apache.logging.log4j"    % "log4j-slf4j-impl"     % V.log4j
     val munit           = "org.scalameta"              %% "munit"                % V.munit
     val scalaLogging    = "com.typesafe.scala-logging" %% "scala-logging"        % V.scalaLogging
-    val organizeImports = "com.github.liancheng"    %% "organize-imports" % V.organizeImports
+    val organizeImports = "com.github.liancheng"       %% "organize-imports"     % V.organizeImports
   }
 
 
