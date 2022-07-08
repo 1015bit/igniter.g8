@@ -2,9 +2,9 @@
 // Global settings
 // *****************************************************************************
 
-ThisBuild / scalaVersion := "3.1.0"
+ThisBuild / scalaVersion := "3.1.3"
 ThisBuild / organization := "$organization$"
-ThisBuild / startYear    := Some(2021)
+ThisBuild / startYear    := Some(2022)
 ThisBuild / licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
 
 ThisBuild / scalafixDependencies += lib.organizeImports
@@ -33,10 +33,10 @@ lazy val `$project_name$` =
 lazy val lib =
   new {
     object V {
-      $if(cats.truthy)$val cats         = "2.6.1"$endif$
-      val log4j           = "2.14.1"
+      $if(cats.truthy)$val cats         = "2.8.0"$endif$
+      val log4j           = "2.18.0"
       val munit           = "0.7.29"
-      val scalaLogging    = "3.9.4"
+      val scalaLogging    = "3.9.5"
       val organizeImports = "0.6.0"
     }
     $if(cats.truthy)$val catsCore       = "org.typelevel"              %% "cats-core"            % V.cats$endif$
