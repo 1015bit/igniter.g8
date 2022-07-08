@@ -16,7 +16,7 @@ ThisBuild / scalafixDependencies += lib.organizeImports
 lazy val `$project_name$` =
   project
     .in(file("."))
-    .settings(settings)
+    .settings(commonSettings)
     .settings(
       libraryDependencies ++= Seq(
         $if(cats.truthy)$lib.catsCore,$endif$
@@ -51,33 +51,12 @@ lazy val lib =
 // Settings
 // *****************************************************************************
 
-lazy val settings = commonSettings
-
 lazy val commonSettings =
   Seq(
-    scalacOptions ++= commonScalacOptions,
     Compile / unmanagedSourceDirectories := Seq((Compile / scalaSource).value),
     Test / unmanagedSourceDirectories    := Seq((Test / scalaSource).value),
     testFrameworks += new TestFramework("munit.Framework")
   )
-
-lazy val commonScalacOptions = Seq(
-  "-deprecation",
-  "-encoding",
-  "UTF-8",
-  "-explain",
-  "-explain-types",
-  "-feature", // warn about usage of features that need to be enabled explicitly
-  "-indent",
-  "-language:_",
-  "-new-syntax", // `then` and `do`
-  "-print-lines",
-  "-unchecked",
-  "-Ykind-projector:underscores", // use new type lambda syntax
-  //"-Xfatal-warnings",
-  "-Xmigration"
-  //"-Xsemanticdb"
-)
 
 // *****************************************************************************
 // Aliases
