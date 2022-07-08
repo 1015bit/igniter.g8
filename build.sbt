@@ -5,8 +5,8 @@ lazy val `igniter` =
     .settings(
       organization := "io.ontherocks",
       organizationName := "Petra Bierleutgeb",
-      test in Test := {
-        val _ = (g8Test in Test).toTask("").value
+      Test / test := {
+        val _ = (Test / g8Test).toTask("").value
       },
       scriptedLaunchOpts ++= List("-Xms1024m",
                                   "-Xmx1024m",
