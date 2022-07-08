@@ -4,7 +4,7 @@
 
 A [Giter8](http://www.foundweekends.org/giter8/) template for kickstarting a new opinionated Scala project with the following features:
 
-* a tidy `build.sbt` inspired by [sbt-fresh](https://github.com/sbt/sbt-fresh/)
+* a tidy `build.sbt`
 * sensible compiler options
 * slim base: almost all (upcoming) features are optional
 * formatting with [scalafmt](https://scalameta.org/scalafmt/)
@@ -36,15 +36,7 @@ sbt new 1015bit/igniter.g8
 | organization_name | Igniter         | Organization name                                                | Awesome Org     |
 | package           | $organization$  | The base package name (used for code gen)                        | io.awesome      |
 | gh_actions        | true            | Whether a build definition for GitHub Actions should be included | false           |
-| cats              | false           | Adds a dependency on cats-core                                   | true            |
-
-## Roadmap
-
-Have a look at the [project board](https://github.com/pbvie/igniter.g8/projects/2).
-
-## Tip: Run your GitHub Actions locally
-
-You can run your GitHub Actions locally with [act]("https://github.com/nektos/act").
+| cats              | true            | Adds a dependency on cats-core                                   | true            |
 
 ## Why is `.gitignore` empty?
 
