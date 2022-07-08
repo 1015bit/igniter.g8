@@ -29,14 +29,14 @@ sbt new 1015bit/igniter.g8
 
 ## Configuration Options
 
-| Property          | Default         | Description                                                      | Example         |
-| ----------------- | --------------- | ---------------------------------------------------------------- | --------------- |
-| project_name      | awesome-project | The project name used in build.sbt                               | awesome-project |
-| organization      | ig.ni.ter       | Organization domain (usually in reverse)                         | io.awesome      |
-| organization_name | Igniter         | Organization name                                                | Awesome Org     |
-| package           | $organization$  | The base package name (used for code gen)                        | io.awesome      |
-| gh_actions        | true            | Whether a build definition for GitHub Actions should be included | false           |
-| cats              | true            | Adds a dependency on cats-core                                   | true            |
+| Property          | Default           | Description                                                      | Example         |
+| ----------------- | ----------------- | ---------------------------------------------------------------- | --------------- |
+| project_name      | awesome-project   | The project name used in build.sbt                               | awesome-project |
+| organization      | ig.ni.ter         | Organization domain                                              | awesome.io      |
+| organization_name | Igniter           | Organization name                                                | Awesome Org     |
+| package           | `$organization$`  | The base package name (used for code gen)                        | io.awesome      |
+| gh_actions        | true              | Whether a build definition for GitHub Actions should be included | true            |
+| cats              | true              | Adds a dependency on cats-core                                   | true            |
 
 ## Why is `.gitignore` empty?
 
