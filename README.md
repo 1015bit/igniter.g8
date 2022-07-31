@@ -5,10 +5,9 @@
 A [Giter8](http://www.foundweekends.org/giter8/) template for kickstarting a new opinionated Scala project with the following features:
 
 * a tidy `build.sbt`
-* sensible compiler options
-* slim base: almost all (upcoming) features are optional
 * formatting with [scalafmt](https://scalameta.org/scalafmt/)
 * formatting rules loosely based on Typelevel [Cats](https://github.com/typelevel/cats)
+* [sbt-tpolecat](https://github.com/typelevel/sbt-tpolecat) for compiler options
 * clear and colorful logging on the console
 * [MUnit](https://scalameta.org/munit/) as test framework
 * CI using GitHub actions (optional)
