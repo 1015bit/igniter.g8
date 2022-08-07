@@ -1,12 +1,12 @@
 package $package$
 
-import com.typesafe.scalalogging.StrictLogging
+import cats.effect.{ ExitCode, IO, IOApp }
 
-object Main extends StrictLogging {
+object Main extends IOApp:
+  private val logger = scribe.cats[IO]
 
-  def main(args: Array[String]): Unit = {
-    logger.debug("be")
-    logger.info("curious")
-  }
+  override def run(args: List[String]): IO[ExitCode] =
+    val app = logger.debug("Starting engines...")
+    app.as(ExitCode.Success)
 
-}
+end Main

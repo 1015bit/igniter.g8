@@ -8,6 +8,8 @@ ThisBuild / startYear    := Some(2022)
 ThisBuild / licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
 
 ThisBuild / scalafixDependencies += lib.organizeImports
+ThisBuild / semanticdbEnabled := true
+ThisBuild / semanticdbVersion := scalafixSemanticdb.revision
 
 // *****************************************************************************
 // Projects
@@ -19,10 +21,10 @@ lazy val `$project_name$` =
     .settings(commonSettings)
     .settings(
       libraryDependencies ++= Seq(
-        $if(cats.truthy)$lib.catsCore,$endif$
-        lib.log4jSlf4j,
-        lib.scalaLogging,
-        lib.munit % Test
+        lib.catsEffect,
+        lib.scribeCats,
+        lib.catsEffectTestkit % Test,
+        lib.munit             % Test
       )
     )
 
@@ -32,20 +34,20 @@ lazy val `$project_name$` =
 
 lazy val lib =
   new {
-    object V {
-      $if(cats.truthy)$val cats         = "2.8.0"$endif$
-      val log4j           = "2.18.0"
-      val munit           = "0.7.29"
-      val scalaLogging    = "3.9.5"
-      val organizeImports = "0.6.0"
-    }
-    $if(cats.truthy)$val catsCore       = "org.typelevel"              %% "cats-core"            % V.cats$endif$
-    val log4jSlf4j      = "org.apache.logging.log4j"    % "log4j-slf4j-impl"     % V.log4j
-    val munit           = "org.scalameta"              %% "munit"                % V.munit
-    val scalaLogging    = "com.typesafe.scala-logging" %% "scala-logging"        % V.scalaLogging
-    val organizeImports = "com.github.liancheng"       %% "organize-imports"     % V.organizeImports
-  }
 
+    object V {
+      val catsEffect      = "3.3.14"
+      val munit           = "0.7.29"
+      val organizeImports = "0.6.0"
+      val scribe          = "3.10.2"
+    }
+
+    val catsEffect        = "org.typelevel"        %% "cats-effect"         % V.catsEffect
+    val catsEffectTestkit = "org.typelevel"        %% "cats-effect-testkit" % V.catsEffect
+    val munit             = "org.scalameta"        %% "munit"               % V.munit
+    val organizeImports   = "com.github.liancheng" %% "organize-imports"    % V.organizeImports
+    val scribeCats        = "com.outr"             %% "scribe-cats"         % V.scribe
+  }
 
 // *****************************************************************************
 // Settings
@@ -62,5 +64,5 @@ lazy val commonSettings =
 // Aliases
 // *****************************************************************************
 
-addCommandAlias("prepare", ";clean;scalafmt;test:scalafmt")
-addCommandAlias("validate", ";clean;scalafmtCheck;test:scalafmtCheck;test")
+addCommandAlias("prepare", ";clean;scalafixAll;scalafmtAll")
+addCommandAlias("validate", ";clean;scalafixAll --check;scalafmtCheckAll;test")
