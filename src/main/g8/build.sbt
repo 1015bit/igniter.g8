@@ -5,7 +5,7 @@
 // Core settings
 ThisBuild / licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
 ThisBuild / organization := "$organization$"
-ThisBuild / scalaVersion := "3.2.2"
+ThisBuild / scalaVersion := "3.3.0"
 ThisBuild / startYear    := Some(2023)
 
 // Plugin settings
@@ -38,10 +38,10 @@ lazy val lib =
   new {
 
     object V {
-      val catsEffect      = "3.3.14"
+      val catsEffect      = "3.5.1"
       val munit           = "0.7.29"
       val organizeImports = "0.6.0"
-      val scribe          = "3.11.1"
+      val scribe          = "3.11.7"
     }
 
     val catsEffect        = "org.typelevel"        %% "cats-effect"         % V.catsEffect
